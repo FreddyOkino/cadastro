@@ -28,5 +28,12 @@ module.exports = {
         } catch (error) {
             console.log(error)
         }
+    },
+    buscartodos: async()=>{
+        try {
+            return await perfilModel.find()
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
