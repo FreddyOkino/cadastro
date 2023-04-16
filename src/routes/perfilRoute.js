@@ -2,12 +2,21 @@ const express = require('express')
 const router = express()
 const perfilService= require('../service/perfilSrevice')
 
+
 router.post("", async (req,res)=>{
     try {
         const resultado = await perfilService.criarPerfil(req.body)
         res.json(resultado)
     } catch (error) {
         console.log(error)
+    }
+})
+router.get("", async(req,res)=>{
+    try {
+        const resposta = await perfilService.buscartodos()
+        res.json(resposta)
+    } catch (error) {
+        
     }
 })
 router.get("/:id", async(req,res)=>{
